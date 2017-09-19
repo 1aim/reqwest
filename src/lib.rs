@@ -128,7 +128,6 @@
 extern crate bytes;
 #[macro_use]
 extern crate futures;
-extern crate hyper;
 extern crate hyper_tls;
 #[macro_use]
 extern crate log;
@@ -143,6 +142,12 @@ extern crate tokio_io;
 extern crate tokio_tls;
 extern crate url;
 extern crate uuid;
+
+/// Re-export of the hyper crate.
+pub mod hyper {
+	pub extern crate hyper;
+	pub use self::hyper::*;
+}
 
 pub use hyper::header;
 pub use hyper::mime;
